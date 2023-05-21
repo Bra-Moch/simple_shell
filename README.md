@@ -107,5 +107,5 @@ $ ./simple_shell
 
 ## Team
 
-*Bernard Mwinyoglee* - [Github](https://github.com/bmwinyoglee) || [Twitter](https://github.com/brakoujo)
+*Bernard Mwinyoglee* - [Github](https://github.com/bmwinyoglee) || [Twitter](https://twitter.com/brakoujo)
 *Kwaku M. Quarm* - [Github](https://github.com/Bra-Moch)
