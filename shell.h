@@ -18,6 +18,11 @@
 #define BUFRSIZE 1024
 #define UNUSED(x) (void)(x)
 
+
+/**
+ * defining ANSI escape sequences for controlling 
+ * the text color in terminal output.
+ */
 #define RESET "\033[0m"
 #define BLK "\033[30m"
 #define RED "\033[31m"
