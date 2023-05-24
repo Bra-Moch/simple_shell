@@ -1,109 +1,128 @@
 A custom "simple_shell" by bravo and bramoch - ALX SE Project
 
-# Simple Shell
+# Simple Shell Project
 
-Building a custom UNIX shell using C.
+**A simple Unix command line interpreter**
 
+****
+## Table of contents
+ - **What is the shell?**
+ - **About this project**
+ - **Essential Functionalities of the Simple Shell**
+ - **File description**
+ - **List of allowed functions and system calls for this project**
+ - **USAGE**
+ - **TEAM**
+ ****
 
+## What is the shell?
+The shell is a program that takes commands from the keyboard via the terminal, and gives them to the operating system to perform.\
+**To better understand how the shell actually works, you can read our [Article].**
 
-## Examples
+## About this project
+This project is a simple version of the linux shell created using the **C programming Language** and it can do many functionalities that a real shell does.
 
-Please follow __Download and Run Instructions__ below for initial setup. When inside the shell, you can:
+## Essential Functionalities of the Simple Shell:
+> Displays a prompt "#cisfun$ " and waits for user input.\
+> Runs all commands of type "executable program" (ls and /bin/ls).\
+> Runs the following build_in commands: **exit**, **env**, **setenv** and **unsetenv**.\
+> Handles commands with arguments.\
+> Handles the PATH global variable.\
+> Handles The EOF (End Of File) condition.\
+> Handles the Ctrl + C signal -> It doesn't exit the shell
 
-Run an executable:
-```
-$ /bin/ls
-```
+## Files description
+ - **AUTHORS** -> List of contributors to this repository
+ - **man_1_simple_shell** -> Manual page for the simple_shell
+ - **shell.h** -> Header file
+ - **shell.c** -> main function
+  - **sig_handler** -> handles the Ctrl + C signal
+  - **_EOF** -> handles the End Of File condition
+ - **string.c**
+  - **_putchar** -> prints a character
+  - **_puts** -> prints a string
+  - **_strlen** -> gives the length of a string
+  - **_strdup** -> copies a string in a newly allocated memory
+  - **concat_all** -> concatenates 3 strings in a newly allocated memory
+ - **line_exec.c**
+  - **splitstring** -> splits a string into an array of words
+  - **execute** -> executes a command using execve
+  - **realloc** -> reallocates a memory block
+  - **freearv** -> frees a 2 dimensional array
+ - **linkpath.c**
+  - **_getenv** -> returns the value of a global variable
+  - **add_node_end** -> adds a node in a singly linked list
+  - **linkpath** -> creates a singly linked list for PATH directories
+  - **_which** -> finds the pathname of a command
+  - **free_list** -> frees the linked list of PATH value
+ - **checkbuild.c**
+  - **checkbuild** -> checks if a command is a build-in command
+ - **buildin.c**
+  - **exitt** -> handles the exit buildin command
+  - **_atoi** -> converts a string into an integer
+  - **env** -> prints the current environment
+  - **_setenv** -> Initialize a new global variable, or modify an existing one
+  - **_unsetenv** -> remove a global variable
 
-Run an executable found in the `$PATH` environment variable:
-```
-$ ls
-```
+****
+## List of allowed functions and system calls for this project
+ - access (man 2 access)
+ - chdir (man 2 chdir)
+ - close (man 2 close)
+ - closedir (man 3 closedir)
+ - execve (man 2 execve)
+ - exit (man 3 exit)
+ - _exit (man 2 _exit)
+ - fflush (man 3 fflush)
+ - fork (man 2 fork)
+ - free (man 3 free)
+ - getcwd (man 3 getcwd)
+ - getline (man 3 getline)
+ - isatty (man 3 isatty)
+ - kill (man 2 kill)
+ - malloc (man 3 malloc)
+ - open (man 2 open)
+ - opendir (man 3 opendir)
+ - perror (man 3 perror)
+ - read (man 2 read)
+ - readdir (man 3 readdir)
+ - signal (man 2 signal)
+ - stat (__xstat) (man 2 stat)
+ - lstat (__lxstat) (man 2 lstat)
+ - fstat (__fxstat) (man 2 fstat)
+ - strtok (man 3 strtok)
+ - wait (man 2 wait)
+ - waitpid (man 2 waitpid)
+ - wait3 (man 2 wait3)
+ - wait4 (man 2 wait4)
+ - write (man 2 write)
+****
 
-Run a shell built-in:
-```
-$ printenv
-```
-
-To find all built-ins, run the manual:
-```
-$ man ./man_1_simple_shell
-```
-
-
-## Download and Run Instructions
-
-Clone Repo:
-```
-$ git clone https://github.com/----/simple_shell.git
-```
-
-Compile:
-```
-$ gcc -Wall -Werror -Wextra -pedantic *.c ./tests/prompt-main.c -o simple_shell
-```
-
-Run the Executable:
-```
-$ ./simple_shell
-```
-
-
-## Requirements for this project
-
-- All files will be compiled on Ubuntu 14.04 LTS
-- Programs and functions will be compiled with `gcc 4.8.4` using the flags `-Wall`, `-Werror`, `-Wextra`, and `-pedantic`
-- Code should comply with [Betty](https://github.com/Alx_course/Betty) style.
-- No more than 5 functions per file.
-- All header files should be include guarded.
-- List of allowed functions and system calls:
-  * `access` (man 2 access)
-  * `chdir` (man 2 chdir)
-  * `close` (man 2 close)
-  * `closedir` (man 3 closedir)
-  * `execve` (man 2 execve)
-  * `exit` (man 3 exit)
-  * `fork` (man 2 fork)
-  * `free` (man 3 free)
-  * `fstat` (man 2 fstat)
-  * `getcwd` (man 3 getcwd)
-  * `getline` (man 3 getline)
-  * `kill` (man 2 kill)
-  * `lstat` (man 2 lstat)
-  * `malloc` (man 3 malloc)
-  * `open` (man 2 open)
-  * `opendir` (man 3 opendir)
-  * `perror` (man 3 perror)
-  * `read` (man 2 read)
-  * `readdir` (man 3 readdir)
-  * `signal` (man 2 signal)
-  * `stat` (man 2 stat)
-  * `strtok` (man 3 strtok) - advanced task recreate
-  * `wait` (man 2 wait)
-  * `waitpid` (man 2 waitpid)
-  * `wait3` (man 2 wait3)
-  * `wait4` (man 2 wait4)
-  * `write` (man 2 write)
-  * `_exit` (man 2 _exit)
-
-
-## File Descriptions
-
-- `shell.h`: Header file which contains any library includes, structs created, and all function prototypes.
-- `prompt.c`: Main shell file which prints and asks for prompt from User, creates tokens from User input, and runs executable or returns response if no executable found.
-- `get-line.c`: Contains a rewrite of function getline and a tokenize function to split apart strings by delimiters.
-- `env-get-set.c`: All functions related to environment variables. Functions include ability to Get, Set, Unset, Print, Check.
-- `builtins.c`: Functions to handle built-in commands and checking commands via PATH environment variable.
-- `string-funcs.c`: Helper functions that handle strings, include copy, compare, tokenize/parse, and concatenate.
-- `string-funcs2.c`: More helper functions.
-- `memory.c`: Functions to handle memory allocation and frees.
-- `cd.c`: Shell built-in change directory command.
-- `alias.c`: Functions to handle alias built-in command.
-- `aliasFunc.c`: Contains a helper function to handle aliases.
-- `hstry.c`: Functions to handle history built-in and storing history of inputted commands in an external parent directory.
-- `help.c`: Functions to handle help built-in.
-- `duplict-parse.c`: Helper functions for parsing and deep duping.
-
+## USAGE
+You can try our shell by following these steps:
+> **Step 1:** Clone our repository using this command, (you need to have git installed on your machine first)
+````
+https://github.com/Bra-Moch/simple_shell.git
+````
+> **Step 2:** Change directory to simple_shell:
+````
+cd simple_shell
+````
+> **Step 3:** Compile the C files in this way:
+````
+gcc -Wall -Werror -Wextra -pedantic *.c -o hardshell
+````
+> **Step 4:** Run the shell
+````
+./hardshell
+````
+**Exiting the shell**
+When you want to exit the shell, you can use one of the following methods:
+> **1: Type the command "exit"**
+````
+exit
+````
+> **2: Press on Ctrl + D**
 
 ## Team
 
