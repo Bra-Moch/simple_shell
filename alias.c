@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /* for tracking the last found alias match */
-static alias *match = NULL;
+static alias *match = '';
 
 /**
 * resetAlias - resets an alias to given values, if found in the list
@@ -17,14 +17,14 @@ alias *resetAlias(alias **head, char *key, char *value)
 
 	start = *head;
 	while (start)
-        {
-                if (_strcmp(start->key, key) == 0)
+	{
+		if (_strcmp(start->key, key) == 0)
 		{
 			start->value = _strcpy(value, _strlen(value));
 			return (start);
 		}
-                start = start->next;
-        }
+		start = start->next;
+	}
 	return (NULL);
 }
 
