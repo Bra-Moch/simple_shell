@@ -34,8 +34,8 @@ This project is a simple version of the linux shell created using the **C progra
 ## Files description
  - **AUTHORS** -> List of contributors to this repository
  - **man_1_simple_shell** -> Manual page for the simple_shell
- - **shell.h** -> Header file
- - **shell.c** -> main function
+ - **main.h** -> Header file
+ - **main.c** -> main function
   - **sig_handler** -> handles the Ctrl + C signal
   - **_EOF** -> handles the End Of File condition
  - **string.c**
