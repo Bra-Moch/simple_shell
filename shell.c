@@ -22,7 +22,7 @@ void _EOF(int length, char *buff)
 	(void)buff;
 	if (length == -1)
 	{
-		if (isatty(STDIN_FIlengthO))
+		if (isatty(STDIN_FILENO)
 		{
 			_puts("\n");
 			free(buff);
@@ -36,7 +36,7 @@ void _EOF(int length, char *buff)
 
 void _isatty(void)
 {
-	if (isatty(STDIN_FIlengthO))
+	if (isatty(STDIN_FILENO))
 		_puts("#cisfun$ ");
 }
 
